@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Header & Footer === */
+.site-header {
+  background-color: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid #63513d;
+}
+
+.site-footer {
+  background-color: white;
+  padding: 1rem 0;
+  border-top: 1px solid #63513d
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #63513d;
+}
+
+/* === Category Card === */
+.category-image {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.category-name {
+  color: #63513d;
+  transition: color 0.3s ease;
+}
+
+.arrow-icon {
+  display: inline-block;
+}
+
+.category-card:hover .arrow-icon {
+  animation: moveArrow 1s ease-in-out infinite;
+}
+
+@keyframes moveArrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
