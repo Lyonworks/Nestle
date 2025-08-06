@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-4">
   <h2>Edit Brand</h2>
-  <form action="{{ route('admin.brands.update', $brand) }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ route('admin.brands.update', $brand->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     
@@ -25,10 +25,10 @@
     </div>
 
     <div class="mb-3">
-      <label for="logo" class="form-label">Logo</label>
-      <input type="file" name="logo" id="logo" class="form-control">
-      @if($brand->logo)
-        <img src="{{ asset('storage/' . $brand->logo) }}" height="50" class="mt-2">
+      <label for="image" class="form-label">Logo</label>
+      <input type="file" name="image" id="image" class="form-control">
+      @if($brand->image)
+        <img src="{{ asset('storage/' . $brand->image) }}" height="50" class="mt-2">
       @endif
     </div>
 

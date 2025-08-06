@@ -18,6 +18,10 @@
             </select>
         </div>
         <div class="mb-3">
+            <label for="description" class="form-label">Product Description</label>
+            <input type="text" name="description" class="form-control">
+        </div>
+        <div class="mb-3">
             <label for="image" class="form-label">Product Image</label>
             <input type="file" name="image" class="form-control">
         </div>

@@ -4,7 +4,7 @@
 <div class="container py-4">
   <h2>Brands</h2>
   <a href="{{ route('admin.brands.create') }}" class="btn btn-primary mb-3">Add New Brand</a>
-  <table class="table table-bordered">
+  <table class="table table-bordered text-center">
     <thead>
       <tr>
         <th>ID</th>
@@ -15,14 +15,14 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($brands as $brand)
+      @foreach($brands as $brand)
       <tr>
         <td>{{ $brand->id }}</td>
         <td>{{ $brand->name }}</td>
         <td>{{ $brand->category->name ?? '-' }}</td> {{-- Menampilkan nama kategori --}}
         <td>
-          @if ($brand->logo)
-            <img src="{{ asset('storage/' . $brand->logo) }}" height="50">
+          @if ($brand->image)
+            <img src="{{ asset('storage/' . $brand->image) }}" height="80">
           @else
             No Logo
           @endif

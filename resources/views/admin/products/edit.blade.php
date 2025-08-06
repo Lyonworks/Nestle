@@ -21,6 +21,10 @@
             </select>
         </div>
         <div class="mb-3">
+            <label for="description" class="form-label">Product Description</label>
+            <input type="text" name="description" class="form-control" value="{{ $product->name }}">
+        </div>
+        <div class="mb-3">
             <label for="image" class="form-label">Product Image</label>
             <input type="file" name="image" class="form-control">
             @if ($product->image)

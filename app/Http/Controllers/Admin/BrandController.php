@@ -24,20 +24,21 @@ class BrandController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'category_id' => 'required|exists:categories,id',
+        $request->validate([
+            'category_id' => 'required|exists:category,id',
             'name' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|max:2048',
         ]);
 
+        $data = $request->only(['category_id', 'name']);
+
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('products', 'public');
-            $validated['image'] = $path;
+            $data['image'] = $request->file('image')->store('brands', 'public');
         }
 
-        Product::create($validated);
+        Brand::create($data);
 
-        return redirect()->route('admin.products.index')->with('success', 'Product created successfully.');
+        return redirect()->route('admin.brands.index')->with('success', 'Brand created successfully.');
     }
 
     public function edit(Brand $brand)
@@ -48,19 +49,21 @@ class BrandController extends Controller
 
     public function update(Request $request, Brand $brand)
     {
-        $data = $request->validate([
+        $request->validate([
             'name' => 'required|string|max:255',
             'category_id' => 'required|exists:category,id',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'nullable|image|max:2048',
         ]);
 
-        if ($request->hasFile('logo')) {
-            $data['logo'] = $request->file('logo')->store('brands', 'public');
+        $data = $request->only(['name', 'category_id']);
+
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('brands', 'public');
         }
 
         $brand->update($data);
 
-        return redirect()->route('admin.brands.index')->with('success', 'Brand updated.');
+        return redirect()->route('admin.brands.index')->with('success', 'Brand updated successfully.');
     }
 
     public function destroy(Brand $brand)

@@ -19,8 +19,8 @@
       </select>
     </div>
     <div class="mb-3">
-      <label for="logo" class="form-label">Logo</label>
-      <input type="file" name="logo" id="logo" class="form-control">
+      <label for="image" class="form-label">Logo</label>
+      <input type="file" name="image" id="image" class="form-control">
     </div>
     <button type="submit" class="btn btn-success">Save</button>
   </form>
