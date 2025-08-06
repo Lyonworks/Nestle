@@ -22,11 +22,6 @@
 }
 
 /* === Category Card === */
-.category-card {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 .category-image {
   object-fit: cover;
   border-radius: 10px;

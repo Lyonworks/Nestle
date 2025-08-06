@@ -26,7 +26,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
           <div class="category-card position-relative overflow-hidden">
             <a href="{{ route('brands.show', $brand->slug) }}" class="d-block text-decoration-none">
-              <img src="{{ asset('storage/' . $brand->image) }}" alt="{{ $brand->name }}" class="img-fluid rounded-circle mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
+              <img src="{{ asset('storage/' . $brand->image) }}" alt="{{ $brand->name }}" class="img-fluid rounded-circle mx-auto my-4 d-block" style="width: 150px; height: 150px; object-fit: cover;">
             </a>
           </div>
         </div>

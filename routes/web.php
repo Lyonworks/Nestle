@@ -20,9 +20,6 @@ Route::get('/brands/{slug}', [BrandController::class, 'show'])->name('brands.sho
 // Rute API untuk data produk publik
 Route::get('/api/products', [ProductController::class, 'publicIndex']);
 
-// Auth bawaan Laravel
-Auth::routes();
-
 // Dashboard user login
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
