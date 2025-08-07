@@ -33,6 +33,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{{ route('admin.brands.index') }}" class="btn btn-secondary ms-2">Back</a>
   </form>
 </div>
 @endsection

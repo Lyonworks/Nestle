@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Brand;
-use App\Models\Category;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Brand;
 
 class BrandController extends Controller
 {
@@ -19,7 +19,7 @@ class BrandController extends Controller
     public function create()
     {
         $category = Category::all();
-    return view('admin.brands.create', compact('category'));
+        return view('admin.brands.create', compact('category'));
     }
 
     public function store(Request $request)
@@ -50,12 +50,12 @@ class BrandController extends Controller
     public function update(Request $request, Brand $brand)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
             'category_id' => 'required|exists:category,id',
+            'name' => 'required|string|max:255',
             'image' => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->only(['name', 'category_id']);
+        $data = $request->only(['category_id', 'name']);
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('brands', 'public');

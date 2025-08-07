@@ -22,13 +22,19 @@
           <td>{{ $product->name }}</td>
           <td>{{ $product->brand->name ?? '-' }}</td>
           <td>{{ $product->description }}</td>
-          <td><img src="{{ asset('storage/' . $product->image) }}" width="80"></td>
           <td>
-            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
-            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="d-inline">
+            @if ($product->image)
+              <img src="{{ asset('storage/' . $product->image) }}" height="80">
+            @else
+              No Image
+            @endif
+          </td>
+          <td>
+            <a href="{{ route('admin.products.edit', $product) }}" class="btn btn-warning btn-sm">Edit</a>
+            <form action="{{ route('admin.products.destroy', $product) }}" method="POST" class="d-inline">
               @csrf
               @method('DELETE')
-              <button class="btn btn-danger btn-sm">Delete</button>
+              <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete product?')">Delete</button>
             </form>
           </td>
         </tr>
