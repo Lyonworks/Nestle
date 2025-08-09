@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('brand_id');
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('slug');
+            $table->string('image');
             $table->timestamps();
-
-            // Definisi foreign key
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
+
     }
 
     /**
@@ -29,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('category');
     }
 };
-
-

@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
@@ -21,6 +21,7 @@ return new class extends Migration
 
             $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
         });
+
     }
 
     /**
