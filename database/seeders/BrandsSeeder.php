@@ -104,7 +104,7 @@ class BrandsSeeder extends Seeder
             ['name' => 'Carnation', 'image' => 'brands/Carnation.jpg', 'category_id' => 9],
             ['name' => 'Chef', 'image' => 'brands/Chef.jpg', 'category_id' => 9],
             ['name' => 'Coffee mate', 'image' => 'brands/Coffee mate.jpg', 'category_id' => 9],
-            ['name' => 'Garden Gourmet', 'image' => 'brands/Garden Gourmet.jpg', 'category_id' => 9],
+            ['name' => 'Garden Gourmet', 'image' => 'brands/Garden Gourmett.jpg', 'category_id' => 9],
             ['name' => 'KitKat', 'image' => 'brands/KitKat.jpg', 'category_id' => 9],
             ['name' => 'La Lechera', 'image' => 'brands/La Lechera.jpg', 'category_id' => 9],
             ['name' => 'Maggi Professional', 'image' => 'brands/Maggi Professional.jpg', 'category_id' => 9],
